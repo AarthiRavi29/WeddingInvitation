@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        background: url('images/background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        text-align: center;
+        color: #333;
+        display: flex;
+        justify-content: center;   /* horizontal center */
+        align-items: center;       /* vertical center */
+        height: 100vh;
+    }
+    .welcome {
+       position: relative;
+       left: 80px;
+    }
+    h1 {
+       font-size: 4em; /* bigger title */
+       background: linear-gradient(to right, #800080, #DA70D6); /* gold to silver */
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+    }
+
+    p {
+       font-size: 1.5em; /* bigger subtitle */
+       margin-bottom: 30px;
+    }
+
+    .btn {
+       font-size: 1.2em;
+       padding: 12px 24px;
+       background: #DA70D6;
+       color: #333;
+       text-decoration: none;
+       border-radius: 8px;
+       transition: background 0.3s ease;
+   }
+
+    .btn:hover {
+      background: #C0C0C0;
+    }
+
+     /* Fade-in animation */
+    @keyframes fadeIn {
+       from { opacity: 0; transform: translateY(-20px); }
+       to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<title>Ajith & Sreemathi Wedding</title>
+<body class="landing">
+<div class="welcome">
+  <h1>Ajith & Sreemathi</h1>
+  <p>We invite you to celebrate our wedding</p>
+  <a href="WeddingInvitation.html" class="btn">Join us</a>
+</div>
+</body>
+</html>

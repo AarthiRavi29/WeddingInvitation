@@ -1,0 +1,28 @@
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.frame {
+  width: 200px;      /* medium size */
+  height: 250px;     /* fixed height */
+  overflow: hidden;  /* hides overflow so all look equal */
+  border: 6px solid #000; /* black frame */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom; /* crops image to fit frame evenly */
+  transition: transform 0.3s ease;
+}
+
+.frame img:hover {
+  transform: scale(1.05);
+}

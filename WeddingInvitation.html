@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        color: #fff;
+        scroll-behavior: smooth;
+    }
+    section {
+      height: 100vh; /* full screen height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+
+    }
+    #sangeeth {
+      background-image: url('images/sangeeth.jpg');
+    }
+
+    #marriage {
+      background-image: url('images/marriagebg.jpg');
+    }
+
+    #reception {
+      background-image: url('images/receptionbg.jpg');
+    }
+    #gallery {
+      background-image: url('images/gallerybg.jpg');
+    }
+    #invite {
+      background-image: url('images/bginv.jpg');
+    }
+
+    h1 {
+      font-size: 2.5em;
+      background: linear-gradient(to right, #FFD700, #C0C0C0); /* gold to silver */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+    p {
+      font-size: 1.2em;
+      margin: 8px 0;
+    }
+    .arrow {
+      cursor: pointer;
+      font-size: 2em;
+      color: #000;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+    nav {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+    nav a {
+      margin: 0 5px;
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .music-btn {
+      position: fixed;   /* stays in place even when scrolling */
+      bottom: 20px;      /* distance from bottom */
+      right: 20px;       /* distance from right */
+      padding: 10px 15px;
+      font-size: 1em;
+      background: #fff;   /* gold button */
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .music-btn:hover {
+       background: #C0C0C0;   /* silver on hover */
+    }
+    .map-btn {
+       display: inline-block;
+       padding: 12px 20px;
+       background: #fff;   /* gold */
+       color: #333;
+       font-weight: bold;
+       text-decoration: none;
+       border-radius: 8px;
+       transition: background 0.3s ease;
+    }
+
+    .map-btn:hover {
+       background: #C0C0C0;   /* silver on hover */
+    }
+  </style>
+</head>
+<body>
+<!-- Background Music -->
+
+
+<button onclick="toggleMusic()" class="music-btn">Music  🎵</button>
+
+<audio id="bg-music" autoplay loop>
+  <source src="music/Jothi_Neranjava.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function toggleMusic() {
+    const music = document.getElementById('bg-music');
+    const btn = document.querySelector('.music-btn');
+
+    if (music.paused) {
+      music.play();
+      btn.textContent = "🔊 Music On";
+    } else {
+      music.pause();
+      btn.textContent = "🔇 Music Off";
+    }
+  }
+</script>
+
+<!-- Navigation -->
+<nav>
+  <a href="#sangeeth">Sangeeth</a>
+  <a href="#marriage">Marriage</a>
+  <a href="#reception">Reception</a>
+  <a href="#gallery">Gallery</a>
+</nav>
+
+<!-- Reception Section -->
+<section id="sangeeth">
+  <h1>Sangeeth</h1>
+  <p><strong>Date:</strong> 12th September 2026</p>
+  <p><strong>Time:</strong> 5.00 PM Onwards</p>
+  <p><strong>Venue:</strong> GANESAN ROYAL PALACE, PERAMBALUR</p>
+  <a href="https://www.google.com/maps/place/Ganesan+Royal+Palace/@11.2366262,78.8540402,17z/data=!3m1!4b1!4m6!3m5!1s0x3bab1b0031544611:0x3e40d69afa8368fa!8m2!3d11.2366262!4d78.8566205!16s%2Fg%2F11z9qvbblz?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
+     target="_blank"
+     class="map-btn">
+    📍 View on Google Maps
+  </a>
+  <a href="#marriage" class="arrow">&#8595;</a>
+</section>
+
+<!-- Marriage Section -->
+<section id="marriage">
+  <h1>Marriage</h1>
+  <p><strong>Date:</strong> 13th September 2026</p>
+  <p><strong>Time:</strong> 6:14 AM - 7:14 AM</p>
+  <p><strong>Venue:</strong> ARULMIGU SRI VAALEESWARAR TEMPLE, VALIGANDAPURAM</p>
+  <a href="https://www.google.com/maps/place/Arulmigu+Vaaleeswarar+Temple/@11.3153357,78.9125673,17z/data=!3m1!4b1!4m6!3m5!1s0x3bab10a7883ef7b7:0x4dcfc6bc2f341878!8m2!3d11.3153357!4d78.9151476!16s%2Fg%2F1tg5shk5?entry=ttu&g_ep=EgoyMDI2MDgzMC4wIKXMDSoASAFQAw%3D%3D"
+     target="_blank"
+     class="map-btn">
+    📍 View on Google Maps
+  </a>
+  <a href="#reception" class="arrow">&#8595;</a>
+</section>
+
+<section id="reception">
+  <h1>Reception</h1>
+  <p><strong>Date:</strong> 13th September 2026</p>
+  <p><strong>Time:</strong> 8.00 AM Onwards</p>
+  <p><strong>Venue:</strong> GANESAN ROYAL PALACE, PERAMBALUR</p>
+  <a href="https://www.google.com/maps/place/Ganesan+Royal+Palace/@11.2366262,78.8540402,17z/data=!3m1!4b1!4m6!3m5!1s0x3bab1b0031544611:0x3e40d69afa8368fa!8m2!3d11.2366262!4d78.8566205!16s%2Fg%2F11z9qvbblz?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
+     target="_blank"
+     class="map-btn">
+    📍 View on Google Maps
+  </a>
+  <a href="#gallery" class="arrow">&#8595;</a>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery">
+  <h1>Our Memories</h1>
+  <div class="gallery">
+    <div class="frame">
+      <img src="images/gallery1.jpg" alt="First Meet photo">
+    </div>
+    <div class="frame">
+      <img src="images/gallery2.jpg" alt="Engagement photo">
+    </div>
+    <div class="frame">
+      <img src="images/gallery3.jpg" alt="First Outing photo">
+    </div>
+  </div>
+
+
+  <a href="#invite" class="arrow">&#8595;</a>
+  <!--<a href="#reception" class="arrow">&#8593;</a>-->
+</section>
+<section id="invite">
+  <h1>Join the celebration with us</h1>
+  <p><strong>Your presence will make our moments more memorable.”.</strong> </p>
+  <p>Every smile, every blessing, every hug will make our day complete — we can’t wait to celebrate with you.</p>
+  <p>Let’s dance, laugh, and celebrate love together!</p>
+
+</section>
+<!-- RSVP Section
+<section id="rsvp">
+  <h1>RSVP</h1>
+  <p>Please confirm your presence</p>
+  <a href="#reception" class="arrow">&#8593;</a>
+</section>-->
+
+</body>
+</html>
