@@ -23,7 +23,7 @@
 
     }
     #sangeeth {
-      background-image: url('images/sangeeth.jpg');
+      background-image: url('images/sangeethbg.jpg');
     }
 
     #marriage {
@@ -61,12 +61,18 @@
       position: fixed;
       top: 10px;
       right: 10px;
+      background: rgba(0, 0, 0, 0.5); /* semi-transparent dark background */
+      padding: 8px 12px;
+      border-radius: 8px;
+      backdrop-filter: blur(4px); /* blur effect */
+      z-index: 1000;
     }
     nav a {
       margin: 0 5px;
       color: #ffd700;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease
     }
     .music-btn {
       position: fixed;   /* stays in place even when scrolling */
@@ -74,12 +80,14 @@
       right: 20px;       /* distance from right */
       padding: 10px 15px;
       font-size: 1em;
-      background: #fff;   /* gold button */
+      background: rgba(255, 215, 0, 0.85);   /* gold button */
       color: #333;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s ease;
+      backdrop-filter: blur(6px); /* blur effect */
+      z-index: 999; /* ensures it stays above section content */
     }
 
     .music-btn:hover {
@@ -98,6 +106,49 @@
 
     .map-btn:hover {
        background: #C0C0C0;   /* silver on hover */
+    }
+    section {
+       position: relative; /* important so absolute works inside */
+    }
+
+    .btn {
+      position: absolute;   /* relative to the section */
+      bottom: 70px;         /* distance from bottom of section */
+      right: 20px;          /* distance from right of section */
+      padding: 10px 15px;
+      font-size: 1em;
+      background: rgba(255, 215, 0, 0.85); /* gold with opacity */
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      backdrop-filter: blur(4px); /* blur behind button */
+    }
+
+    .btn:hover {
+       background: rgba(192, 192, 192, 0.85); /* silver on hover */
+    }
+    .marquee {
+       position: absolute;
+       top: 40px;       /* place at bottom of section */
+       width: 100%;        /* full width */
+       overflow: hidden;
+       white-space: nowrap;
+    }
+
+    .marquee span {
+       display: inline-block;
+       padding-left: 100%; /* start off screen */
+       font-size: 1.5em;
+       font-weight: bold;
+       color: #FFD700;     /* gold text */
+       animation: scrollText 12s linear infinite;
+    }
+
+    @keyframes scrollText {
+       0%   { transform: translateX(0); }
+       100% { transform: translateX(-100%); }
     }
   </style>
 </head>
@@ -136,6 +187,9 @@
 
 <!-- Reception Section -->
 <section id="sangeeth">
+  <div class="marquee">
+    <span> ❤ Ajith weds Sreemathi ❤</span>
+  </div>
   <h1>Sangeeth</h1>
   <p><strong>Date:</strong> 12th September 2026</p>
   <p><strong>Time:</strong> 5.00 PM Onwards</p>
@@ -145,7 +199,7 @@
      class="map-btn">
     📍 View on Google Maps
   </a>
-  <a href="#marriage" class="arrow">&#8595;</a>
+  <a href="#marriage" class="btn">Next Page</a>
 </section>
 
 <!-- Marriage Section -->
@@ -159,7 +213,7 @@
      class="map-btn">
     📍 View on Google Maps
   </a>
-  <a href="#reception" class="arrow">&#8595;</a>
+  <a href="#reception" class="btn">Next Page</a>
 </section>
 
 <section id="reception">
@@ -172,12 +226,12 @@
      class="map-btn">
     📍 View on Google Maps
   </a>
-  <a href="#gallery" class="arrow">&#8595;</a>
+  <a href="#gallery" class="btn">Next Page</a>
 </section>
 
 <!-- Gallery Section -->
 <section id="gallery">
-  <h1>Our Memories</h1>
+  <h1>Sreemathi & Ajith</h1>
   <div class="gallery">
     <div class="frame">
       <img src="images/gallery1.jpg" alt="First Meet photo">
@@ -191,14 +245,16 @@
   </div>
 
 
-  <a href="#invite" class="arrow">&#8595;</a>
+
+  <a href="#invite" class="btn">Next Page</a>
   <!--<a href="#reception" class="arrow">&#8593;</a>-->
 </section>
 <section id="invite">
   <h1>Join the celebration with us</h1>
-  <p><strong>Your presence will make our moments more memorable.”.</strong> </p>
-  <p>Every smile, every blessing, every hug will make our day complete — we can’t wait to celebrate with you.</p>
-  <p>Let’s dance, laugh, and celebrate love together!</p>
+  <p><strong>Your presence will make our moments more memorable</strong> </p>
+  <p>Every smile, every blessing, every hug will make our day complete </p>
+  <p>we can’t wait to celebrate with you </P>
+  <P>Let’s dance, laugh, and celebrate love together!</p>
 
 </section>
 <!-- RSVP Section
